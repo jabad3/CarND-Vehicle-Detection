@@ -76,12 +76,9 @@ def find_cars(img, scale=1.5, ystart=400, ystop=656, pix_per_cell=8, orient=9, c
     nxsteps = (nxblocks - nblocks_per_window) //cells_per_step
     nysteps = (nyblocks - nblocks_per_window) //cells_per_step
 
-    hog1 = get_hog_features(ch1, orient, pix_per_cell,
-                           cell_per_block, feature_vec=False)
-    hog2 = get_hog_features(ch2, orient, pix_per_cell,
-                           cell_per_block, feature_vec=False)
-    hog3 = get_hog_features(ch3, orient, pix_per_cell,
-                           cell_per_block, feature_vec=False)
+    hog1 = get_hog_features(ch1, orient, pix_per_cell, cell_per_block, feature_vec=False)
+    hog2 = get_hog_features(ch2, orient, pix_per_cell, cell_per_block, feature_vec=False)
+    hog3 = get_hog_features(ch3, orient, pix_per_cell, cell_per_block, feature_vec=False)
 
     for xb in range(nxsteps):
         for yb in range(nysteps):
@@ -94,7 +91,6 @@ def find_cars(img, scale=1.5, ystart=400, ystop=656, pix_per_cell=8, orient=9, c
 
             xleft = xpos*pix_per_cell
             ytop = ypos*pix_per_cell
-
             subimg = cv2.resize(ctrans_tosearch[ytop:ytop+window, xleft:xleft+window], (64,64))
 
             spatial_features = bin_spatial(subimg, size=spatial_size)

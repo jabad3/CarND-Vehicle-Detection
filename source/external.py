@@ -6,6 +6,10 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from skimage.feature import hog
 
+################################################
+# These functions are available from the lectures.
+################################################
+
 
 # Define a function to return HOG features and visualization
 def get_hog_features(img, orient, pix_per_cell, cell_per_block, vis=False, feature_vec=True):
@@ -21,6 +25,7 @@ def get_hog_features(img, orient, pix_per_cell, cell_per_block, vis=False, featu
         return features
 
 
+# Define a function to convert color scales
 def convert_color(img, conv="RGB2YCrCb"):
     if conv == "RGB2YCrCb":
         return cv2.cvtColor(img, cv2.COLOR_RGB2YCrCb)
@@ -30,6 +35,7 @@ def convert_color(img, conv="RGB2YCrCb"):
         return cv2.cvtColor(img, cv2.COLOR_RGB2LUV)
 
 
+# Compute image color histogram 
 def color_hist(img, nbins=32):
     # Compute the histogram of the RGB channels separately
     rhist = np.histogram(img[:,:,0], bins=nbins )
@@ -45,7 +51,6 @@ def color_hist(img, nbins=32):
 
 
 def bin_spatial(img, size=(32,32)):
-#def bin_spatial(img, color_space='RGB', size=(32, 32)):
     color1 = cv2.resize(img[:,:,0], size).ravel()
     color2 = cv2.resize(img[:,:,1], size).ravel()
     color3 = cv2.resize(img[:,:,2], size).ravel()
@@ -284,6 +289,7 @@ def apply_threshold(heatmap, threshold):
     heatmap[heatmap <= threshold] = 0
     return heatmap
 
+
 def draw_labeled_bboxes(img, labels):
     # Iterate through all detected cars
     for car_number in range(1, labels[1]+1):
@@ -298,7 +304,6 @@ def draw_labeled_bboxes(img, labels):
         cv2.rectangle(img, bbox[0], bbox[1], (0,0,255), 6)
     # Return the image
     return img
-
 
 
 def visualize(fig, rows, cols, imgs, titles):
@@ -317,6 +322,7 @@ def visualize(fig, rows, cols, imgs, titles):
             #plt.savefig('two.png')
             #plt.waitforbuttonpress()
     plt.savefig('result.png')
+
 
 def visualize_notebook(fig, rows, cols, imgs, titles):
     for i, img in enumerate(imgs):
