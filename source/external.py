@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from skimage.feature import hog
 
-################################################
+##################################################
 # These functions are available from the lectures.
-################################################
+##################################################
 
 
 # Define a function to return HOG features and visualization
