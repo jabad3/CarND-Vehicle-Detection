@@ -48,7 +48,7 @@ Settling on the paramters came through trial and error. I experimented with some
 
 
 ####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
-I trained a linear SVM using the provided dataset and the sklearn library. In the pipeline, before the first image is processed, I generate a model using the `train()` function around lines 51-56 in the `find_cars()` function. This is imported from the `train.py` file. In it, we see that the classifier is trained (using `extract_features()` on an image) with hog features, spatial features, and histogram features. All of these features are stacked and then the SVM is used to fit the data into a model classifier. This entire process is around lines 30-87 of the `train.py` file.
+I trained a linear SVM using the provided dataset and the sklearn library. In the pipeline, before the first image is processed, I generate a model using the `train()` function around lines 51-56 in the `find_cars()` function. This is imported from the `train.py` file. In it, we see that the classifier is trained (using `extract_features()` on an image) with hog features, spatial features, and histogram features. All of these features are stacked and then the SVM is used to fit the data into a model classifier. This entire process is around lines 30-87 of the `train.py` file. This model is later used in the pipeline to determine if sub-regions of an input image match to a car image.
 
 
 ###Sliding Window Search
