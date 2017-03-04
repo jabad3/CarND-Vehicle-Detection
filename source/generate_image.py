@@ -110,12 +110,12 @@ def find_cars(img, scale=1.5, ystart=400, ystop=656, pix_per_cell=8, orient=9, c
             test_features = X_scalar.transform(np.hstack((spatial_features, hist_features, hog_features)).reshape(1,-1))
             test_prediction = svc.predict(test_features)
 
-            if test_prediction == 1:
+            if test_prediction == 1: # if a match is found
                 xbox_left = np.int(xleft*scale) # scale up and find the original coordinates of the point
                 ytop_draw = np.int(ytop*scale)
                 win_draw = np.int(window*scale)
                 # draw a rectactangle on the match and add to heat map
-                cv2.rectangle(canvas, (xbox_left, ytop_draw+ystart),(xbox_left+win_draw,ytop_draw+win_draw+ystart),(0,0))   
-                heatmap[ytop_draw+ystart:ytop_draw+win_draw+ystart, xbox_left:xbox_left+win_draw]+=1
+                cv2.rectangle(canvas, (xbox_left, ytop_draw+ystart),(xbox_left+win_draw,ytop_draw+win_draw+ystart),(0,0)) # mark
+                heatmap[ytop_draw+ystart:ytop_draw+win_draw+ystart, xbox_left:xbox_left+win_draw]+=1 # mark
 
     return canvas, heatmap
