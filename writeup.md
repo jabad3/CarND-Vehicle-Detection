@@ -13,11 +13,11 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./writeup_images/image1.png
-[image2]: ./writeup_images/image2.png
-[image3]: ./writeup_images/image3.png
-[image4]: ./writeup_images/image4.jpg
-[image5]: ./writeup_images/image5.jpg
+[image1i]: ./writeup_images/image1.png
+[image2i]: ./writeup_images/image2.png
+[image3i]: ./writeup_images/image3.png
+[image4i]: ./writeup_images/image4.jpg
+[image5i]: ./writeup_images/image5.jpg
 
 
 [image3]: ./examples/sliding_windows.jpg
@@ -44,9 +44,9 @@ In the pipeline, the hog features are extracted in the `generate_image.py` file 
 
 Here is an example of this function on one each of the `vehicle` and `non-vehicle` classes:
 
-![alt text][image1]
-![alt text][image2]
-![alt text][image3]
+![alt text][image1i]
+![alt text][image2i]
+![alt text][image3i]
 
 ####2. Explain how you settled on your final choice of HOG parameters.
 Settling on the paramters came through trial and error. I experimented with some of the combinations that were seen in the lectures, with a few different color spaces, and I visualized the results as I tried different combinations. I also used the forums and other Udacity resources to see what results were working well for others.
@@ -63,11 +63,11 @@ I begin to set-up the parameters of my sliding-window search in lines 73-82 of t
 
 Region of Interest
 
-![alt text][image4]
+![alt text][image4i]
 
 The windows overlap by about 75%. Highlighted are 4 overlapping windows.
 
-![alt text][image5]
+![alt text][image5i]
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
