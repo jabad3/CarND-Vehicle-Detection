@@ -16,8 +16,8 @@ The goals / steps of this project are the following:
 [image1i]: ./writeup_images/image1.png
 [image2i]: ./writeup_images/image2.png
 [image3i]: ./writeup_images/image3.png
-[image4i]: ./writeup_images/image4.jpg
-[image5i]: ./writeup_images/image5.jpg
+[image4i]: ./writeup_images/image4.png
+[image5i]: ./writeup_images/image5.png
 
 
 [image3]: ./examples/sliding_windows.jpg
