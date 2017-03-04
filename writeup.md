@@ -13,8 +13,13 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./examples/car_not_car.png
-[image2]: ./examples/HOG_example.jpg
+[image1]: ../writeup_images/image1.png
+[image2]: ../writeup_images/image2.png
+[image3]: ../writeup_images/image3.png
+[image4]: ../writeup_images/image4.jpg
+[image5]: ../writeup_images/image5.jpg
+
+
 [image3]: ./examples/sliding_windows.jpg
 [image4]: ./examples/sliding_window.jpg
 [image5]: ./examples/bboxes_and_heat.png
@@ -40,8 +45,8 @@ In the pipeline, the hog features are extracted in the `generate_image.py` file 
 Here is an example of this function on one each of the `vehicle` and `non-vehicle` classes:
 
 ![alt text][image1]
-
 ![alt text][image2]
+![alt text][image3]
 
 ####2. Explain how you settled on your final choice of HOG parameters.
 Settling on the paramters came through trial and error. I experimented with some of the combinations that were seen in the lectures, with a few different color spaces, and I visualized the results as I tried different combinations. I also used the forums and other Udacity resources to see what results were working well for others.
@@ -56,7 +61,13 @@ I trained a linear SVM using the provided dataset and the sklearn library. In th
 ####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 I begin to set-up the parameters of my sliding-window search in lines 73-82 of the `generate_image.py` file. The windows overlap by about 75% (6cells/8cells). Searching begins at the top left of the cropped image and continues through the end of the cropped image. The windows are approximatly 64x64px. By calculating the number of windows that can fit in the area of interest, along with overlaps, it is possible to step through each of them from within a for-loop (see begining around line 90 of that same file). I used the scales and overlap that were tested in the lectures. 
 
-![alt text][image3]
+Region of Interest
+
+![alt text][image4]
+
+The windows overlap by about 75%. Highlighted are 4 overlapping windows.
+
+![alt text][image5]
 
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
