@@ -13,11 +13,11 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ../writeup_images/image1.png
-[image2]: ../writeup_images/image2.png
-[image3]: ../writeup_images/image3.png
-[image4]: ../writeup_images/image4.jpg
-[image5]: ../writeup_images/image5.jpg
+[image1]: ./writeup_images/image1.png
+[image2]: ./writeup_images/image2.png
+[image3]: ./writeup_images/image3.png
+[image4]: ./writeup_images/image4.jpg
+[image5]: ./writeup_images/image5.jpg
 
 
 [image3]: ./examples/sliding_windows.jpg
