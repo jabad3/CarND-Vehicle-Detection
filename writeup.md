@@ -44,7 +44,7 @@ Here is an example of this function on one each of the `vehicle` and `non-vehicl
 ![alt text][image2]
 
 ####2. Explain how you settled on your final choice of HOG parameters.
-Settling on the paramters came through trial and error. I experimented with some of the combinations that were seen in the lectures, with a few different color spaces, and I visualized the results as I tried different combinations.
+Settling on the paramters came through trial and error. I experimented with some of the combinations that were seen in the lectures, with a few different color spaces, and I visualized the results as I tried different combinations. I also used the forums and other Udacity resources to see what results were working well for others.
 
 
 ####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
